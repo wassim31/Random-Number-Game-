@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h> // for rand(); ( random number generator) function
-#include <windows.h> // library that include cmd instructions like cls , dir , cd 
+#include <windows.h> // library that include cmd instructions like cls , dir , cd
 
 int main()
 {
-    int number_Mystere, number_Added, i, repeat; // mystere for function rand . added for added number by user
-    const int MAX = 100, MIN = 1; // the max-min of random number
+    int number_Mystere, number_Added, i, repeat, choice; // mystere for function rand . added for added number by user
+    int MAX, MIN; // the max-min of random number
     srand(time(NULL)); // init the random number generator function
 
     // loop statement for asking user to repeat again
@@ -15,7 +15,32 @@ int main()
         system("cls"); // for clearing the text after repeat = 1 (by user)
         printf("  \t\tRANDOM-NUMBER-GENERATOR GAME\n\n");
         printf("You must find the mystery number \n\n");
-        printf("The number is between 1 and 100 , Try now \n\n");
+        // Choosing the level of game
+        printf("Choose the Game Difficulty\n\n");
+        printf("1- MIN = 1 , MAX = 100\n");
+        printf("2- MIN = 1 , MAX = 1000\n");
+        printf("3- MIN = 1 , MAX = 10000\n");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+            case 1:
+                MAX = 100, MIN = 1;
+            break;
+
+            case 2:
+                MAX = 1000, MIN = 1;
+            break;
+
+            case 3:
+                MAX = 10000, MIN = 1;
+            break;
+
+            default:
+                printf("choose the difficulty, enter the MAX : ");
+                scanf("%d", &MAX);
+            break;
+        }
+        printf("The number is between %d and %d , Try now \n\n", MAX, MIN);
         number_Mystere = (rand() % (MAX - MIN + 1)) + MIN;
         i = 0; // initializing the value variable that count how much player plays .
         // the main loop statement
