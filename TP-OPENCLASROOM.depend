@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1603653645 source:c:\users\wass\desktop\tp-openclasroom\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
