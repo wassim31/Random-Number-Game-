@@ -6,7 +6,7 @@
 int main()
 {
     int number_Mystere, number_Added, i, repeat, choice; // mystere for function rand . added for added number by user
-    int MAX, MIN; // the max-min of random number
+    int MAX, MIN = 1; // the max-min of random number
     srand(time(NULL)); // init the random number generator function
 
     // loop statement for asking user to repeat again
@@ -24,15 +24,15 @@ int main()
         switch (choice)
         {
             case 1:
-                MAX = 100, MIN = 1;
+                MAX = 100;
             break;
 
             case 2:
-                MAX = 1000, MIN = 1;
+                MAX = 1000;
             break;
 
             case 3:
-                MAX = 10000, MIN = 1;
+                MAX = 10000;
             break;
 
             default:
